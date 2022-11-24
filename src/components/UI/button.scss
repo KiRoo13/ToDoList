@@ -1,0 +1,14 @@
+$color1: rgb(84, 41, 71);
+$color5: rgb(246, 169, 169);
+
+.btn {
+   padding: 13px;
+   border: none;
+   border-radius: 10px;
+   color: $color5;
+   background-color: $color1;
+   box-shadow: 0 0 5px 0 $color5;
+}
+.btn:hover {
+   cursor: pointer;
+}
