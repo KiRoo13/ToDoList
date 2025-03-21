@@ -1,0 +1,15 @@
+.board  {
+   width: 100%;
+   margin-top: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   border: 3px solid rebeccapurple;
+   border-radius: 10px;
+ }
+
+ @media (max-width: 920px) {
+    .board {
+      flex-direction: column;
+    }
+ }

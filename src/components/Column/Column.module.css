@@ -1,0 +1,28 @@
+.board__col {
+   flex: 1 0 33%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-left: 3px solid rebeccapurple;
+ }
+ .board__col:first-child {
+   border: 0px;
+ }
+ .board__col h2 {
+    padding: 5px 0;
+    background-color: rebeccapurple;
+    width: 100%;
+    text-align: center;
+ }
+ .wrappwrInp {
+  width: 90%;
+  margin: 20px 0 10px 0;
+ }
+ .inp {
+   border: none;
+   background: transparent;
+   color: rgb(83, 126, 163);
+ }
+ .inp::-webkit-input-placeholder {
+  color: rgb(83, 126, 163);
+ }

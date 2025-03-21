@@ -1,0 +1,23 @@
+.popUpWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 100;
+   background-color: rgb(0, 0, 0, 0.3);
+}
+.popUp {
+  width: 450px;
+  min-height: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
