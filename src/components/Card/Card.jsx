@@ -8,7 +8,8 @@ import { removeTask, changeStatus } from "../../store/reducers/taskSlice";
 import { useMemo, useState } from "react";
 import EditForm from "../EditForm/EditForm";
 
-const Card = ({ description, task }) => {
+const Card = ({ task }) => {
+  console.log(task)
   const { Option } = Select;
   const dispatch = useDispatch();
   const [statusClass, setStatusClass] = useState("");
@@ -33,7 +34,7 @@ const Card = ({ description, task }) => {
   return (
     <>
       <div className={s.card}>
-        <div className={s.cardDiscription }>{description}</div>
+        <div className={s.cardDiscription }>{task.text}</div>
         <span className={`${s.status} ${statusClass}`}></span>
         {edit ? (<EditForm task={task} isShow={edit} setShow={setEdit}/>) : (<EditOutlined onClick={hendlerEdit} />)}
         <Select

@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialTasks = {
-  toDo: [],
-  inProgress: [],
-  done: [],
+  allTasks: [],
   searchText: {
     toDo: "",
     inProgress: "",
@@ -11,29 +9,24 @@ const initialTasks = {
   },
 };
 
-const filterTask = (status, id) => status.filter((el) => el.id !== id);
+const filterTask = (state, id) => state.filter((el) => el.id !== id);
 
 const taskSlice = createSlice({
   name: "task",
   initialState: initialTasks,
   reducers: {
-    addTask: (slice, action) => {
-      const task = action.payload;
-      const { status } = task;
-      slice[status].push(task);
+    addTask: (slice, { payload }) => {
+     slice.allTasks.push(payload)
     },
-    removeTask: (slice, action) => {
-      const task = action.payload;
-      const { status, id } = task;
-      slice[status] = filterTask(slice[status], id);
+    removeTask: (slice, { payload }) => {
+      const task = payload;
+      slice.allTasks = filterTask(slice.allTasks, task.id);
     },
-    changeStatus: (slice, action) => {
-      const [currentStatus, task] = action.payload;
-      const newTask = { ...task };
-      const { status, id } = newTask; 
-      newTask.status = currentStatus;
-      slice[currentStatus].push(newTask);
-      slice[status] = filterTask(slice[status], id);
+    changeStatus: (slice, { payload }) => {
+      const [currentStatus, task] = payload;
+      const { id } = task.id; 
+      slice.allTasks = slice.allTasks.map((task)=> task.id === id ? {...task, status: currentStatus} : task)
+      console.log(currentStatus, slice.allTasks)
     },
     editText: (slice, action) => {
       const [task, newText] = action.payload;
