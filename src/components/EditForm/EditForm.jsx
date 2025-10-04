@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from 'antd';
-import s from './EditForm.module.css';
 import { useDispatch } from "react-redux";
 import { editText } from "../../store/reducers/taskSlice"
 
+import s from './EditForm.module.css';
 
 
 const EditForm = ({task, isShow, setShow}) => {
@@ -12,7 +12,7 @@ const EditForm = ({task, isShow, setShow}) => {
    const dispatch = useDispatch()
 
    const editTextTask = () => {
-       dispatch(editText([task, editValue]))
+       dispatch(editText([editValue, task]))
        setShow(!isShow)
    }
 

@@ -1,15 +1,15 @@
-import React from "react";
-// import ButtonUI from "../../UI/ButtonUI/ButtonUI";
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import { Select, Modal  } from "antd";
-import s from "./Card.module.css";
 import { useDispatch } from "react-redux";
 import { removeTask, changeStatus } from "../../store/reducers/taskSlice";
 import { useMemo, useState } from "react";
 import EditForm from "../EditForm/EditForm";
 
+import s from "./Card.module.css";
+
+
 const Card = ({ task }) => {
-  console.log(task)
+
   const { Option } = Select;
   const dispatch = useDispatch();
   const [statusClass, setStatusClass] = useState("");
@@ -34,7 +34,7 @@ const Card = ({ task }) => {
   return (
     <>
       <div className={s.card}>
-        <div className={s.cardDiscription }>{task.text}</div>
+        <div className={s.cardDiscription }>{task.title}</div>
         <span className={`${s.status} ${statusClass}`}></span>
         {edit ? (<EditForm task={task} isShow={edit} setShow={setEdit}/>) : (<EditOutlined onClick={hendlerEdit} />)}
         <Select

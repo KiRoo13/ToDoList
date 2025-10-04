@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "antd";
 
 
-const ButtonUI = ({children, onClick}) => {
+const ButtonUI = ({text, onClick}) => {
    return (
-      <Button onClick={onClick}>{children}</Button>
+      <Button onClick={onClick}>{text}</Button>
    )
 }
 
