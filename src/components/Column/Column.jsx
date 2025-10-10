@@ -10,11 +10,11 @@ const Column = ({ title, searchTitle }) => {
   const [serchText, setSerchText] = useState('')
 
   const allTasks = useSelector((state) => state.task.allTasks);
-  console.log(allTasks)
+  
 
   const myTasks = useMemo(()=> {
    return allTasks.filter((item) => item.status === searchTitle)
-  }, [allTasks, searchTitle])
+  }, [allTasks])
 
 
 

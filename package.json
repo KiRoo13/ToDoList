@@ -1,7 +1,8 @@
 {
-  "name": "kanban",
+  "name": "todolist",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://KiRoo13.github.io/ToDoList/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.5.0",
     "axios": "^1.4.0",
+    "gh-pages": "^6.3.0",
     "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
@@ -20,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "gh-pages -d dist",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
